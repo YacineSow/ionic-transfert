@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+<ion-grid>
+      <ion-row>
+        <ion-col>
+            <ion-button expand="block" color="primary" shape="round" type="submit" (click)="buttonEnvoie()" >
+                <ion-icon slot="start" name="send"></ion-icon>
+                Envoie
+              </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button expand="block" color="success" shape="round" type="submit" (click)="buttonRetrait()" >
+                <ion-icon slot="start" name="checkmark-circle"></ion-icon>
+                Retrait
+              </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <form #form="ngForm" (ngSubmit)="transaction(form)" method="post">
+      <div *ngIf="!bouton">
+    <ion-item>
+        <ion-label position="floating">PrenomBen</ion-label>
+        <ion-input ngModel name="prenomben"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">NomBen</ion-label>
+      <ion-input ngModel name="nomben"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">TelephoneBen</ion-label>
+      <ion-input type="number" ngModel name="telephoneexp"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">PrenomExp</ion-label>
+      <ion-input type="text" ngModel name="prenomexp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">NomExp</ion-label>
+      <ion-input type="text" ngModel name="nomexp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">TelephoneExp</ion-label>
+      <ion-input type="number" ngModel name="telephoneexp"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Montant</ion-label>
+      <ion-input type="number" ngModel name="montant"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cni</ion-label>
+      <ion-input type="number" ngModel name="cni"></ion-input>
+    </ion-item>
+
+    </div>
+
+    <div *ngIf="bouton">
+    <ion-item>
+      <ion-label position="floating">Code</ion-label>
+      <ion-input type="number" ngModel name="code"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">CniExp</ion-label>
+      <ion-input type="number" ngModel name="cniexp"></ion-input>
+    </ion-item>
+  </div>
+    <ion-button type="submit" expand="full" color="success">envoyer</ion-button>
+  </form>
+</ion-content> 

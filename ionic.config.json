@@ -1,0 +1,7 @@
+{
+  "name": "tottamtionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
